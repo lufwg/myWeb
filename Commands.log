@@ -1,0 +1,93 @@
+//Check git's installed version
+git --version
+//config name
+git config --global user.name "lufwg"
+//config email
+git config --global user.email lufwg@proton.me
+//open text editor (Visual Studio Code), the termial waits until we close the editor (jus the tab)
+git config --global core.editor "Code --wait"
+//see global config file
+git config --global -e
+// the line break is label in windows with the special characters "Carriage Return" or Cr and Line Feed Lf
+//in linux and Mac they use just Lf not Cr
+//In Windows we need to delete this char (Cr) from every line before upload the code, and add it when Download
+//this config tl this for us
+git config --global core.autocrlf true
+//In linux/Mac is not necesary but is recommended to to use
+git config --global core.autocrlf input //just in case...
+//list of all the config commads
+git config -h
+//LiSt all the files and folders in a specific directory
+ls
+//Please Where Daf*ck I am?
+pwd
+//move to another folder (inside the folder where I am) or Change Directory, use tab to autocomplete
+cd Desktop/
+//lo left the actual folder (back to the folder that contains the actual)
+cd ..
+//create a folder (or MaKe a DIRectory)
+mkdir myWeb
+cd myWeb
+//INITialize as a project to be manage with GIT
+git int
+//to see hidden files (as .git/)
+ls -a
+//The WorkFlow is Computer->Stage->Commit->Server so 
+//We can Delete add or Modify files and folers in our Computer
+// but to select what files we want to move to Stage 
+//it is like a draft of the list of changes we want to do, not only add files, also add the record of a file deletion
+git add
+//when you are sure about the chages you want to "Commit", to move to Commit
+git commit
+//if u want to upload that commits to the Server in the cloud u could use
+git commit
+//to show the current state of our repository
+git status
+//"untracked files" git does not track all files we put in our project, we should to select it
+// to add a file
+git add file1.txt
+//to select all the files ending in ".txt"
+git add * .txt
+//to add all the untracked files
+git add .
+//to add more added, or modified files
+git add file1.txt file2.txt
+//to commit wihtout open the code editor
+git -m "Initial Commit"
+//to ReMove a file (without addingin to the stage)
+rm file2.txt
+//to ReMove a file and add that chage to stage
+git rm file21.txt
+// to takeout a change from the stage
+git restore --staged file1.txt
+//to undo or recove the file (not in stage)
+git restore file1.txt
+//to MoVe a file or chage its name
+mv file1.txt file.txt
+//now we need to add this chage to stage
+git add file1.txt file.txt
+//to rename and add to stage at the same time
+git mv file.txt file1.txt 
+//better than git status, red is no added, green is in stage, M=modified ??=A=Added
+git status -s
+//To see the text of all the chages not added
+git diff
+//all the changes in stage
+git diff --staged
+//all the history of the repository
+git log
+//in one line
+git log --oneline
+//in what branch i am?
+git branch
+//create a branche
+git checkout -b features/name-of-the-fuctionality-or-tickedNumber
+//show the content of our file
+cat anotherFile.txt
+//move to other branch
+git checkout master
+//to bring back the chages in branchb to master (u need to stay in Master)
+git merche branchB 
+//to upload
+git push -u origin master
+git remote add origin https://github.com/lufwg/myWeb.git
